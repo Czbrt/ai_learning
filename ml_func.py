@@ -24,13 +24,20 @@ def z_score_normalization(X):
     return X_normal
 
 
+# classification
 def sigmoid(Z):
     return 1 / (1 + np.exp(-Z))
 
 
+# Linear Regression
 def relu(Z):
     return np.maximum(0, Z)
 
 
 def tanh(Z):
     return np.tanh(Z)
+
+
+def binary_crossentropy(y_true, y_pred):
+    loss = -np.mean(y_true * np.log(y_pred) + (1 - y_true) * np.log(1 - y_pred))
+    return loss
